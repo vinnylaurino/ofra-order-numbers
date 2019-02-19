@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="airtable.browser.js"></script>
+<script src="airtable.js"></script>
+<link href="css.css" rel="stylesheet" type="text/css">
+</head>
+<body class="full">
+  <header class="flex center">
+    <div class="fifty logo-wrap">
+      <img src="ofralogo.svg" class="logo" alt="">
+    </div>
+    <div class="fifty header-title">
+      <span>Order Tracking System</span>
+    </div>
+  </header>
+  <section class="wrapper">
+    <div class="section order-input-section">
+      <h2>ENTRADA DE PEDIDO</h2>
+      <div class="new-order-input-form">
+        <form id="orderForm" class="">
+          <input type="text" name="order-number" id="newOrderNumber" value="" autofocus autocomplete="off">
+          <button id="new-order-button"  class="btn">ENVIAR<i class="fas fa-greater-than"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="section order-display-section">
+      <div class="flex just-center">
+        <h2>PEDIDOS DE HOY</h2>
+      </div>
+      <div class="wrapper">
+        <div class="header flex-row row">
+          <div class="fifty">PEDIDO</div>
+          <div class="fifty">HORA</div>
+        </div>
+        <div id="currentOrders" class="number-recall flex flex-table"> </div>
+      </div>
+    </div>
+    <p class="center">Por favor, recuerde descargar y eliminar pedidos una vez por semana</p>
+    <div class="section export-area flex just-center">
+        <a id="exportBtn" class="btn"><i class="fas fa-download"></i>DESCARGAR ORDENES</a>
+        <a id="deleteAll" class="red-back btn"><i class="fas fa-trash-alt"></i>ELIMINAR PEDIDOS</a>
+    </div>
+  </section>
+  <div id="myModal" class="modal">
+    <div class="modal-content center">
+      <h1>pedido duplicado detectado</h1>
+      <button class="btn" onclick="location.reload();">REMOVER</button>
+    </div>
+  </div>
+<script src="js.js"></script>
+</body>
+</html>

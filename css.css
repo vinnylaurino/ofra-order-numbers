@@ -1,0 +1,454 @@
+.html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Alleyn';
+    src: url('Alleyn-Bold.woff2') format('woff2'),
+        url('Alleyn-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Alleyn';
+    src: url('Alleyn-Light.woff2') format('woff2'),
+        url('Alleyn-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Alleyn';
+    src: url('Alleyn-Regular.woff2') format('woff2'),
+        url('Alleyn-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Alleyn';
+    src: url('Alleyn-Medium.woff2') format('woff2'),
+        url('Alleyn-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* GRID */
+.section {
+    width: 100%;
+}
+
+.pad-section {
+    padding: var(--double-pad) 0;
+}
+
+.full-width,
+.main {
+    width: 100%;
+}
+
+.full {
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+}
+
+.ten {
+    width: 10%;
+}
+
+.twenty {
+    width: 20%;
+}
+
+.twenty-five {
+    width: 25%;
+}
+
+.thirty {
+    width: 30%;
+}
+
+.thirty-three {
+    width: 33.33%;
+
+}
+
+.thirty-five {
+    width: 35%;
+}
+
+.forty {
+    width: 40%;
+}
+
+.fifty {
+    width: 50%;
+
+}
+
+.sixty {
+    width: 60%;
+}
+
+.sixty-six {
+    width: 66.66%;
+
+}
+
+.seventy {
+    width: 70%;
+}
+
+.seventy-five {
+    width: 75%;
+}
+
+.eighty {
+    width: 80%;
+}
+
+.ninety {
+    width: 90%;
+}
+
+.relative {
+    position: relative;
+}
+
+.spads {
+    padding: 0 0.15em;
+}
+
+.pad {
+    padding: 0.5em;
+}
+
+.padt {
+    padding: 0.5em 0;
+}
+
+.pads {
+    padding: 0 0.5em;
+}
+
+.pad1 {
+    padding: 1.5em;
+}
+
+.pad1s {
+    padding: 0 1.5em;
+}
+
+.pad2 {
+    padding: 2em;
+}
+
+.pad2s {
+    padding: 0 2em;
+}
+
+.pad2t {
+    padding: 2em 0;
+}
+
+.pad4 {
+    padding: 4em;
+}
+
+.pad4s {
+    padding: 0 4em;
+}
+
+.pad4t {
+    padding: 4em 0;
+}
+
+.pad8t {
+    padding: 8em 0;
+}
+
+/* alignments */
+.center {
+    text-align: center;
+
+}
+
+.clear {
+    clear: both;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.small {
+    font-size: var(--small-font);
+}
+
+.narrow {
+    width: 769px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.thin {
+    font-weight: 300;
+}
+
+.normal {
+    font-weight: 400;
+}
+
+.underline {
+    border-bottom: 1px solid;
+}
+
+.flex {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.flex-row {
+    flex-flow: row;
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-flow: column;
+}
+
+.flex-center {
+    align-self: center;
+}
+
+.just-center {
+    justify-content: center;
+}
+
+.just-right {
+    justify-content: flex-end;
+}
+
+.flex-right {
+    flex-flow: row-reverse wrap;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.row-reverse {
+    flex-flow: row-reverse wrap;
+}
+
+.flex-left {
+    align-items: left;
+}
+
+.flex-bottom {
+    align-self: baseline;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.spaced {
+    justify-content: space-between;
+}
+
+.espaced {
+    justify-content: space-evenly;
+}
+
+.wrapper {
+    margin: auto;
+
+}
+
+/* PAGE ELEMENTS */
+
+
+html {
+    font-family: 'Alleyn';
+    font-weight: normal;
+    color: #535353;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px 0 20px 0;
+    vertical-align: middle;
+    align-items: center;
+}
+
+
+.logo {
+    height: 50px;
+}
+
+.header-title {
+    height: 50px;
+    font-size: 20px;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.header-title span {
+    height: 100%;
+
+}
+
+.header {
+    background-color: #535353;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+
+}
+
+.item-row {
+    height: 2rem;
+    min-height: 2rem;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.item-row:nth-child(even) {
+    background-color: #ccc;
+}
+
+.number-recall {
+    overflow: auto;
+    text-align: center;
+    max-height: 50vh;
+}
+
+
+.order-display-section {
+
+    height: 55vh;
+}
+
+.export-area {
+    /* height: 10vh; */
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.order-input-section {
+    background-color: #ccc;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 17vh;
+    justify-content: center;
+}
+
+#orderForm {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    margin: 0;
+
+}
+
+#new-order-button {
+    width: 30vw;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+i {
+    padding: 0 10px;
+}
+
+#newOrderNumber {
+    width: 30vw;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #535353;
+    font-size: 1.5rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 25, 23, 0.90);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    width: 80%;
+    text-transform: uppercase;
+    color: red;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 1em;
+}
+
+input:focus {
+    outline: 3px solid #73cac1;
+    ;
+}
+
+section .wrapper {
+    width: 90vw;
+    margin: 0 auto;
+}
+a{
+	text-decoration: none;
+}
+
+.export-area a {
+    margin-right: 20px;
+}
+
+/* BUTTONS*/
+.btn {
+    background-color: #535353;
+    border: none;
+    padding: 1rem;
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #62cbba;
+}
+
+.red-back {
+    background: red;
+    color: #fff;
+}
+
+.red-back:hover {
+    background: darkred;
+    color: #fff;
+}

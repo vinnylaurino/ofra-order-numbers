@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style type="text/css"></style>
+</head>
+
+<body>
+  <main>
+    <div class="wrapper">
+      <h1>Orders input</h1>
+      <div class="new-order">
+        <form id="order-form" class="">
+          <input type="text" name="order-number" id="new-order-number" value="" autofocus>
+          <input type="submit" id="new-order-button" value="SEND" >
+        </form>
+      </div>
+    </div>
+    <div class="wrapper">
+      <h1>Orders de hoy</h1>
+      <div class="number-recall">
+        <table width="100%"><tr><th>Order</th><th>Time</th></tr></table>
+        <table id="result" class="" width="100%"></table>
+      </div>
+    </div>
+
+  </main>
+<!-- <script src="js.js" charset="utf-8"></script> -->
+<script>
+var jsonUrl = "https://api.airtable.com/v0/app85WLPCysvMb4vj/orders?api_key=key1puFSUx6VTe5pj";
+
+//post
+var form = document.querySelector("#order-form");
+form.addEventListener("submit", function(event) {
+    if ($('#new-order-number').val() != '') {
+        event.preventDefault();
+        var orderNum = $("#new-order-number").val();
+        var currentDate = new Date();
+        var currentTime = `${currentDate.getHours()}:${currentDate.getMinutes()}`;
+        axios
+            .post(jsonUrl, {
+                "fields": {
+                    "OrderNum": orderNum,
+                    "OrderDate": currentTime
+                }
+            })
+            .then(function(response) {
+                setTimeout(function() {
+                    $("#new-order-number").focus().val('');
+                    getDataAndBuild();
+                }, 250);
+            })
+    }
+});
+//get
+function getDataAndBuild() {
+    fetch(jsonUrl)
+        .then(response => response.json())
+        .then(data => {
+            var html_to_append = '';
+            data.records.forEach(function(val) {
+                html_to_append +=
+                    '<tr id="dupe-row"><td id="dupes">' +
+                    val.fields.OrderNum +
+                    '</td><td>' +
+                    val.fields.OrderDate +
+                    '</td><td><button id="delete">x</button></td></tr>';
+            });
+            $("#result").html(html_to_append);
+            dupeChecker();
+        });
+};
+getDataAndBuild();
+//check
+function dupeChecker() {
+    var contents = {},
+        duplicates = false;
+    $("tr #dupes").each(function() {
+        var tdContent = $(this).text();
+        if (contents[tdContent]) {
+            duplicates = true;
+            $("body").css('backgroundColor', 'red');
+        } else {
+            $("body").css('backgroundColor', 'white');
+
+        }
+        contents[tdContent] = true;
+        console.log("checking");
+    });
+};
+
+
+
+
+</script>
+
+</body>
+
+</html>
