@@ -334,13 +334,14 @@ header {
 .number-recall {
     overflow: auto;
     text-align: center;
-    max-height: 50vh;
+    max-height: 40vh;
 }
 
 
 .order-display-section {
 
-    height: 55vh;
+    height: 40vh;
+    padding-bottom: 100px;
 }
 
 .export-area {

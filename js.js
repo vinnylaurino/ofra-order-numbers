@@ -29,7 +29,7 @@ form.addEventListener("submit", function(event) {
 });
 
 function registerOrder(orderNum, currentTime, scannerId) { // FUNCTION TO CREATE THE ORDER
-    var scannerId = "001";
+    var scannerId = "17121375";
     var rowItem = '<div class="item-row flex-row row"><div data-order-number="' + orderNum + '" class="order-number fifty">' + orderNum + '</div><div data-order-time="' + currentTime + '" class="order-time fifty">' + currentTime + '</div>'
     base('Orders').create({
             "OrderNum": orderNum,
