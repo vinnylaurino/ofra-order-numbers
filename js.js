@@ -20,6 +20,7 @@ form.addEventListener("submit", function(event) {
         var orderNum = $("#newOrderNumber").val();
         var currentDate = new Date();
         var currentTime = `${currentDate.getHours()}:${currentDate.getMinutes()}`;
+
         checkDuplicates(orderNum, currentTime, duplicate); // CREATES THE ORDER BUT CHECKS FOR DUPES FIRST
     }
     setTimeout(function() {
@@ -27,11 +28,13 @@ form.addEventListener("submit", function(event) {
     }, 250);
 });
 
-function registerOrder(orderNum, currentTime) { // FUNCTION TO CREATE THE ORDER
+function registerOrder(orderNum, currentTime, scannerId) { // FUNCTION TO CREATE THE ORDER
+    var scannerId = "001";
     var rowItem = '<div class="item-row flex-row row"><div data-order-number="' + orderNum + '" class="order-number fifty">' + orderNum + '</div><div data-order-time="' + currentTime + '" class="order-time fifty">' + currentTime + '</div>'
     base('Orders').create({
             "OrderNum": orderNum,
-            "OrderDate": currentTime
+            "OrderDate": currentTime,
+            "ScannerID": scannerId
         },
         function(err, record) {
             if (err) {
