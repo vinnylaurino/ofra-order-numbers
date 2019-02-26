@@ -1,3 +1,6 @@
+
+
+
 .html,
 body {
     margin: 0;
@@ -289,12 +292,14 @@ html {
 
 header {
     background-color: #fff;
-    padding: 20px 0 20px 0;
+    padding: 10px 0 10px 0;
     vertical-align: middle;
     align-items: center;
 }
 
-
+h2{
+color:#c2a0dc;
+}
 .logo {
     height: 50px;
 }
@@ -334,21 +339,22 @@ header {
 .number-recall {
     overflow: auto;
     text-align: center;
-    max-height: 40vh;
+    max-height: 50vh;
 }
 
 
 .order-display-section {
 
-    height: 40vh;
-    padding-bottom: 100px;
+
 }
 
 .export-area {
-    /* height: 10vh; */
     display: flex;
     flex-flow: row;
     align-items: center;
+    padding-bottom: 20px;
+    position: absolute;
+    bottom:0;
 }
 
 .order-input-section {
@@ -406,7 +412,7 @@ i {
     text-transform: uppercase;
     color: red;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0;
     right: 0;
     margin: auto;
@@ -428,6 +434,14 @@ a{
 
 .export-area a {
     margin-right: 20px;
+}
+.version{
+  font-size: 8px;
+  text-align: right;
+  padding-right: 10px;
+  position: absolute;
+  bottom: 0;
+  right:0;
 }
 
 /* BUTTONS*/
@@ -452,4 +466,29 @@ a{
 .red-back:hover {
     background: darkred;
     color: #fff;
+}
+@media screen and (max-width: 600px) {
+.export-area span, .new-order-input-form span{
+  display:none;
+}
+.logo {
+    height: 30px;
+}
+
+.header-title {
+    height: 30px;
+    font-size: 12px;
+    vertical-align: middle;
+     align-items: center;
+}
+
+}
+@media screen and (max-height: 640px) {
+
+  .order-input-section {
+      height: 15vh;
+  }
+  h2{
+    margin: 5px 0;
+  }
 }

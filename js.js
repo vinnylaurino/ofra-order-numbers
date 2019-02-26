@@ -10,16 +10,27 @@ var day = d.getDate();
 var currentDay = d.getFullYear() + '-' +
     (('' + month).length < 2 ? '0' : '') + month + '-' +
     (('' + day).length < 2 ? '0' : '') + day;
+    var currentDayFormatted =
+        (('' + month).length < 2 ? '0' : '') + month + '-' +
+        (('' + day).length < 2 ? '0' : '') + day;
 var orderNum = $("#newOrderNumber").val();
 var currentTime = '';
 var rowItem = '';
 var duplicate = false;
+
+
 form.addEventListener("submit", function(event) {
     if ($('#newOrderNumber').val() != '') {
         event.preventDefault();
+                  function addZero(i) {
+            if (i < 10) {
+              i = "0" + i;
+            }
+            return i;
+          };
         var orderNum = $("#newOrderNumber").val();
         var currentDate = new Date();
-        var currentTime = `${currentDate.getHours()}:${currentDate.getMinutes()}`;
+        var currentTime = `${addZero(currentDate.getHours())}:${addZero(currentDate.getMinutes())}  ${currentDayFormatted}`;
 
         checkDuplicates(orderNum, currentTime, duplicate); // CREATES THE ORDER BUT CHECKS FOR DUPES FIRST
     }
@@ -28,13 +39,11 @@ form.addEventListener("submit", function(event) {
     }, 250);
 });
 
-function registerOrder(orderNum, currentTime, scannerId) { // FUNCTION TO CREATE THE ORDER
-    var scannerId = "17121375";
+function registerOrder(orderNum, currentTime) { // FUNCTION TO CREATE THE ORDER
     var rowItem = '<div class="item-row flex-row row"><div data-order-number="' + orderNum + '" class="order-number fifty">' + orderNum + '</div><div data-order-time="' + currentTime + '" class="order-time fifty">' + currentTime + '</div>'
     base('Orders').create({
             "OrderNum": orderNum,
-            "OrderDate": currentTime,
-            "ScannerID": scannerId
+            "OrderDate": currentTime
         },
         function(err, record) {
             if (err) {
@@ -116,6 +125,7 @@ function getDataAndBuild() { // FUNCTION TO POPULATE THE PAGE WITH CURRENT ORDER
     });
 }
 getDataAndBuild(); // POPULATE THE PAGE
+
 // modal instead of alert
 var modal = document.getElementById('myModal');
 

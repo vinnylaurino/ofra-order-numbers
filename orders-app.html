@@ -26,7 +26,7 @@
       <div class="new-order-input-form">
         <form id="orderForm" class="">
           <input type="text" name="order-number" id="newOrderNumber" value="" autofocus autocomplete="off">
-          <button id="new-order-button"  class="btn">ENVIAR<i class="fas fa-greater-than"></i></button>
+          <button id="new-order-button"  class="btn"><span>ENVIAR</span><i class="fas fa-greater-than"></i></button>
         </form>
       </div>
     </div>
@@ -42,10 +42,13 @@
         <div id="currentOrders" class="number-recall flex flex-table"> </div>
       </div>
     </div>
-    <p class="center">Por favor, recuerde descargar y eliminar pedidos una vez por semana</p>
-    <div class="section export-area flex just-center">
-        <a id="exportBtn" class="btn"><i class="fas fa-download"></i>DESCARGAR ORDENES</a>
-        <a id="deleteAll" class="red-back btn"><i class="fas fa-trash-alt"></i>ELIMINAR PEDIDOS</a>
+      <div class="section export-area flex just-center">
+        <a id="exportBtn" class="btn"><i class="fas fa-download"></i><span>DESCARGAR ORDENES</span></a>
+        <a id="deleteAll" class="red-back btn"><i class="fas fa-trash-alt"></i><span>ELIMINAR PEDIDOS</span></a>
+
+    </div>
+    <div>
+      <p class="version">V.1.04</p>
     </div>
   </section>
   <div id="myModal" class="modal">
@@ -54,6 +57,7 @@
       <button class="btn" onclick="location.reload();">REMOVER</button>
     </div>
   </div>
+
 <script src="js.js"></script>
 </body>
 </html>
