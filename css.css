@@ -299,6 +299,8 @@ header {
 
 h2{
 color:#c2a0dc;
+padding: 0;
+margin:0;
 }
 .logo {
     height: 50px;
