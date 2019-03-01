@@ -295,19 +295,20 @@ header {
     padding: 10px 0 10px 0;
     vertical-align: middle;
     align-items: center;
+    height:10vh;
+
 }
 
 h2{
 color:#c2a0dc;
-padding: 0;
+padding: 10px 0;
 margin:0;
 }
 .logo {
-    height: 50px;
+    height:50px;
 }
 
 .header-title {
-    height: 50px;
     font-size: 20px;
     vertical-align: middle;
     align-items: center;
@@ -364,7 +365,7 @@ margin:0;
     display: flex;
     flex-flow: column;
     align-items: center;
-    height: 17vh;
+    height: 16vh;
     justify-content: center;
 }
 
@@ -448,6 +449,7 @@ a{
 
 /* BUTTONS*/
 .btn {
+  font-family: 'Alleyn';
     background-color: #535353;
     border: none;
     padding: 1rem;
@@ -485,12 +487,19 @@ a{
 }
 
 }
-@media screen and (max-height: 640px) {
-
+@media screen and (max-height: 670px) {
+ header{
+height:30px;
+ }
+ .logo{
+   height:30px;
+ }
   .order-input-section {
       height: 15vh;
   }
   h2{
-    margin: 5px 0;
+    margin:0;
+    font-size:12px;
   }
+
 }
