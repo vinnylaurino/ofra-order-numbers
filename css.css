@@ -1,6 +1,3 @@
-
-
-
 .html,
 body {
     margin: 0;
@@ -295,17 +292,18 @@ header {
     padding: 10px 0 10px 0;
     vertical-align: middle;
     align-items: center;
-    height:10vh;
+    height: 10vh;
 
 }
 
-h2{
-color:#c2a0dc;
-padding: 10px 0;
-margin:0;
+h2 {
+    color: #c2a0dc;
+    padding: 10px 0;
+    margin: 0;
 }
+
 .logo {
-    height:50px;
+    height: 50px;
 }
 
 .header-title {
@@ -345,19 +343,13 @@ margin:0;
     max-height: 50vh;
 }
 
-
-.order-display-section {
-
-
-}
-
 .export-area {
     display: flex;
     flex-flow: row;
     align-items: center;
     padding-bottom: 20px;
     position: absolute;
-    bottom:0;
+    bottom: 0;
 }
 
 .order-input-section {
@@ -431,25 +423,27 @@ section .wrapper {
     width: 90vw;
     margin: 0 auto;
 }
-a{
-	text-decoration: none;
+
+a {
+    text-decoration: none;
 }
 
 .export-area a {
     margin-right: 20px;
 }
-.version{
-  font-size: 8px;
-  text-align: right;
-  padding-right: 10px;
-  position: absolute;
-  bottom: 0;
-  right:0;
+
+.version {
+    font-size: 8px;
+    text-align: right;
+    padding-right: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 /* BUTTONS*/
 .btn {
-  font-family: 'Alleyn';
+    font-family: 'Alleyn';
     background-color: #535353;
     border: none;
     padding: 1rem;
@@ -471,35 +465,47 @@ a{
     background: darkred;
     color: #fff;
 }
+
+.disabled {
+	pointer-events: none;
+	opacity: 0.4;
+}
 @media screen and (max-width: 600px) {
-.export-area span, .new-order-input-form span{
-  display:none;
-}
-.logo {
-    height: 30px;
+
+    .export-area span,
+    .new-order-input-form span {
+        display: none;
+    }
+
+    .logo {
+        height: 30px;
+    }
+
+    .header-title {
+        height: 30px;
+        font-size: 12px;
+        vertical-align: middle;
+        align-items: center;
+    }
+
 }
 
-.header-title {
-    height: 30px;
-    font-size: 12px;
-    vertical-align: middle;
-     align-items: center;
-}
-
-}
 @media screen and (max-height: 670px) {
- header{
-height:30px;
- }
- .logo{
-   height:30px;
- }
-  .order-input-section {
-      height: 15vh;
-  }
-  h2{
-    margin:0;
-    font-size:12px;
-  }
+    header {
+        height: 30px;
+    }
+
+    .logo {
+        height: 30px;
+    }
+
+    .order-input-section {
+        height: 15vh;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 12px;
+    }
 
 }
